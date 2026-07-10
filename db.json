@@ -1,0 +1,5713 @@
+{
+  "alerts": [
+    {
+      "id": "SOC-2026-0121",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4217-X",
+      "time": "2026-07-10T13:57:17Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "90%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:27:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0120",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8611-X",
+      "time": "2026-07-10T13:57:00Z",
+      "source": "203.0.113.5",
+      "dest": "198.51.100.82",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "71%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:27:00",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0119",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4474-X",
+      "time": "2026-07-10T13:56:47Z",
+      "source": "10.0.4.15",
+      "dest": "github.com/payloads",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "87%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:26:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0118",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2905-X",
+      "time": "2026-07-10T13:56:30Z",
+      "source": "10.0.6.44",
+      "dest": "185.220.101.99",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "85%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:26:30",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0117",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9742-X",
+      "time": "2026-07-10T13:56:17Z",
+      "source": "203.0.113.5",
+      "dest": "45.89.222.102",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "72%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:26:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0116",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4985-X",
+      "time": "2026-07-10T13:56:00Z",
+      "source": "10.0.12.44",
+      "dest": "github.com/payloads",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "99%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:26:00",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0115",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5539-X",
+      "time": "2026-07-10T13:55:47Z",
+      "source": "10.0.1.10",
+      "dest": "45.89.222.102",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "71%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:25:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0114",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3592-X",
+      "time": "2026-07-10T13:55:30Z",
+      "source": "10.0.12.44",
+      "dest": "45.89.222.102",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "99%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:25:30",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0113",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8213-X",
+      "time": "2026-07-10T13:55:17Z",
+      "source": "10.0.6.44",
+      "dest": "198.51.100.82",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "70%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:25:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0112",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1600-X",
+      "time": "2026-07-10T13:55:00Z",
+      "source": "10.0.12.44",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "88%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:25:00",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0111",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3020-X",
+      "time": "2026-07-10T13:54:47Z",
+      "source": "10.0.1.10",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "80%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:24:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0110",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4073-X",
+      "time": "2026-07-10T13:54:30Z",
+      "source": "10.0.6.44",
+      "dest": "185.220.101.99",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "97%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:24:30",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0109",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6833-X",
+      "time": "2026-07-10T13:54:17Z",
+      "source": "10.0.4.15",
+      "dest": "198.51.100.82",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "96%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:24:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0108",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8054-X",
+      "time": "2026-07-10T13:54:00Z",
+      "source": "10.0.1.10",
+      "dest": "185.220.101.99",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "74%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:24:00",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0107",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8395-X",
+      "time": "2026-07-10T13:53:47Z",
+      "source": "203.0.113.5",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "81%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:23:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0106",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4940-X",
+      "time": "2026-07-10T13:53:30Z",
+      "source": "10.0.12.44",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "91%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:23:30",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0105",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2686-X",
+      "time": "2026-07-10T13:53:17Z",
+      "source": "10.0.12.44",
+      "dest": "github.com/payloads",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "94%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:23:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0104",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6799-X",
+      "time": "2026-07-10T13:53:00Z",
+      "source": "10.0.12.44",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "86%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:23:00",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0103",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5656-X",
+      "time": "2026-07-10T13:52:47Z",
+      "source": "203.0.113.5",
+      "dest": "45.89.222.102",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "92%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:22:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0102",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2533-X",
+      "time": "2026-07-10T13:52:30Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "86%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:22:30",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0101",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3639-X",
+      "time": "2026-07-10T13:52:17Z",
+      "source": "203.0.113.5",
+      "dest": "198.51.100.82",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "98%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:22:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0100",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8800-X",
+      "time": "2026-07-10T13:52:00Z",
+      "source": "10.0.6.44",
+      "dest": "185.220.101.99",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "90%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:22:00",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0099",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9130-X",
+      "time": "2026-07-10T13:51:47Z",
+      "source": "10.0.6.44",
+      "dest": "github.com/payloads",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "92%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:21:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0098",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3788-X",
+      "time": "2026-07-10T13:51:30Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "94%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:21:30",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0097",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2723-X",
+      "time": "2026-07-10T13:51:17Z",
+      "source": "10.0.12.44",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "73%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:21:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0096",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4880-X",
+      "time": "2026-07-10T13:51:00Z",
+      "source": "10.0.1.10",
+      "dest": "45.89.222.102",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "85%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:21:00",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0095",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9410-X",
+      "time": "2026-07-10T13:50:47Z",
+      "source": "10.0.6.44",
+      "dest": "45.89.222.102",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "70%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:20:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0094",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7803-X",
+      "time": "2026-07-10T13:50:30Z",
+      "source": "203.0.113.5",
+      "dest": "185.220.101.99",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "82%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:20:30",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0093",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9631-X",
+      "time": "2026-07-10T13:50:17Z",
+      "source": "10.0.6.44",
+      "dest": "185.220.101.99",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "84%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:20:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0092",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4035-X",
+      "time": "2026-07-10T13:50:00Z",
+      "source": "10.0.12.44",
+      "dest": "github.com/payloads",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "94%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:20:00",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0091",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2943-X",
+      "time": "2026-07-10T13:49:47Z",
+      "source": "203.0.113.5",
+      "dest": "198.51.100.82",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "97%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:19:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0090",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6277-X",
+      "time": "2026-07-10T13:49:30Z",
+      "source": "203.0.113.5",
+      "dest": "198.51.100.82",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "99%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:19:30",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0089",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1745-X",
+      "time": "2026-07-10T13:49:17Z",
+      "source": "10.0.6.44",
+      "dest": "198.51.100.82",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "95%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:19:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0088",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7073-X",
+      "time": "2026-07-10T13:48:59Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "99%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:18:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0087",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6769-X",
+      "time": "2026-07-10T13:48:47Z",
+      "source": "203.0.113.5",
+      "dest": "198.51.100.82",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "76%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:18:47",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0086",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1994-X",
+      "time": "2026-07-10T13:48:29Z",
+      "source": "10.0.4.15",
+      "dest": "github.com/payloads",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "91%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:18:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0085",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1815-X",
+      "time": "2026-07-10T13:48:17Z",
+      "source": "10.0.12.44",
+      "dest": "github.com/payloads",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "78%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:18:17",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0084",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2941-X",
+      "time": "2026-07-10T13:47:59Z",
+      "source": "10.0.1.10",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "89%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:17:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0083",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2932-X",
+      "time": "2026-07-10T13:47:46Z",
+      "source": "10.0.6.44",
+      "dest": "github.com/payloads",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "77%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:17:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0082",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5282-X",
+      "time": "2026-07-10T13:47:29Z",
+      "source": "10.0.4.15",
+      "dest": "github.com/payloads",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "82%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:17:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0081",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4475-X",
+      "time": "2026-07-10T13:47:16Z",
+      "source": "10.0.1.10",
+      "dest": "185.220.101.99",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "82%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:17:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0080",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7917-X",
+      "time": "2026-07-10T13:46:59Z",
+      "source": "10.0.6.44",
+      "dest": "185.220.101.99",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "87%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:16:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0079",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5194-X",
+      "time": "2026-07-10T13:46:46Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "77%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:16:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0078",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2495-X",
+      "time": "2026-07-10T13:46:29Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "81%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:16:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0077",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8640-X",
+      "time": "2026-07-10T13:46:16Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "99%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:16:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0076",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1320-X",
+      "time": "2026-07-10T13:45:59Z",
+      "source": "10.0.4.15",
+      "dest": "github.com/payloads",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "91%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:15:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0075",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9091-X",
+      "time": "2026-07-10T13:45:46Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "77%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:15:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0074",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6822-X",
+      "time": "2026-07-10T13:45:29Z",
+      "source": "10.0.1.10",
+      "dest": "185.220.101.99",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "83%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:15:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0073",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7906-X",
+      "time": "2026-07-10T13:45:16Z",
+      "source": "10.0.6.44",
+      "dest": "github.com/payloads",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "76%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:15:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0072",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4936-X",
+      "time": "2026-07-10T13:44:59Z",
+      "source": "10.0.4.15",
+      "dest": "198.51.100.82",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "94%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:14:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0071",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5663-X",
+      "time": "2026-07-10T13:44:46Z",
+      "source": "10.0.4.15",
+      "dest": "198.51.100.82",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "88%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:14:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0070",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7803-X",
+      "time": "2026-07-10T13:44:29Z",
+      "source": "203.0.113.5",
+      "dest": "198.51.100.82",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "96%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:14:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0069",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4234-X",
+      "time": "2026-07-10T13:44:16Z",
+      "source": "10.0.1.10",
+      "dest": "198.51.100.82",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "71%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:14:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0068",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1500-X",
+      "time": "2026-07-10T13:43:59Z",
+      "source": "10.0.6.44",
+      "dest": "198.51.100.82",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "73%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:13:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0067",
+      "title": "SQL Injection on Core DB",
+      "severity": "high",
+      "system": "Snort IDS",
+      "eventId": "EV-9632-M",
+      "time": "2026-07-10T13:43:52Z",
+      "source": "198.51.100.22",
+      "dest": "10.0.6.44",
+      "asset": "DB-PROD-01",
+      "status": "new",
+      "tiMatched": false,
+      "description": "hhh",
+      "threatIntel": {
+        "actor": "Manual Simulator",
+        "confidence": "100%",
+        "malware": "Simulation Payload",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01",
+          "role": "Target Host"
+        },
+        {
+          "class": "ip",
+          "val": "198.51.100.22",
+          "role": "Source IP"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:13:52",
+          "title": "Alert Generated",
+          "details": "Manually simulated SOC threat.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0066",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5623-X",
+      "time": "2026-07-10T13:43:46Z",
+      "source": "203.0.113.5",
+      "dest": "185.220.101.99",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "75%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:13:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0065",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2781-X",
+      "time": "2026-07-10T13:43:29Z",
+      "source": "203.0.113.5",
+      "dest": "198.51.100.82",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "75%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:13:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0064",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5962-X",
+      "time": "2026-07-10T13:43:16Z",
+      "source": "10.0.6.44",
+      "dest": "45.89.222.102",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "92%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:13:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0063",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6191-X",
+      "time": "2026-07-10T13:42:59Z",
+      "source": "10.0.6.44",
+      "dest": "45.89.222.102",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "93%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:12:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0062",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8617-X",
+      "time": "2026-07-10T13:42:46Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "85%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:12:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0061",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2101-X",
+      "time": "2026-07-10T13:42:29Z",
+      "source": "10.0.6.44",
+      "dest": "185.220.101.99",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "99%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:12:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0060",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9622-X",
+      "time": "2026-07-10T13:42:16Z",
+      "source": "10.0.12.44",
+      "dest": "185.220.101.99",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "89%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:12:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0059",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4431-X",
+      "time": "2026-07-10T13:41:59Z",
+      "source": "10.0.1.10",
+      "dest": "198.51.100.82",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "98%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:11:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0058",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1052-X",
+      "time": "2026-07-10T13:41:46Z",
+      "source": "10.0.12.44",
+      "dest": "45.89.222.102",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "87%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:11:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0057",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5075-X",
+      "time": "2026-07-10T13:41:29Z",
+      "source": "10.0.6.44",
+      "dest": "198.51.100.82",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "87%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:11:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0056",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1234-X",
+      "time": "2026-07-10T13:41:16Z",
+      "source": "10.0.6.44",
+      "dest": "198.51.100.82",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "83%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:11:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0055",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2886-X",
+      "time": "2026-07-10T13:40:59Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "91%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:10:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0054",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4113-X",
+      "time": "2026-07-10T13:40:46Z",
+      "source": "203.0.113.5",
+      "dest": "github.com/payloads",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "92%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:10:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0053",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2117-X",
+      "time": "2026-07-10T13:40:29Z",
+      "source": "10.0.12.44",
+      "dest": "198.51.100.82",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "82%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:10:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0052",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3086-X",
+      "time": "2026-07-10T13:40:16Z",
+      "source": "10.0.6.44",
+      "dest": "198.51.100.82",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "88%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:10:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0051",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3718-X",
+      "time": "2026-07-10T13:39:59Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "85%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:09:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0050",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4684-X",
+      "time": "2026-07-10T13:39:46Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "96%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:09:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0049",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7864-X",
+      "time": "2026-07-10T13:39:29Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "79%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:09:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0048",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2096-X",
+      "time": "2026-07-10T13:39:16Z",
+      "source": "10.0.6.44",
+      "dest": "185.220.101.99",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "79%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:09:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0047",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3733-X",
+      "time": "2026-07-10T13:38:59Z",
+      "source": "10.0.1.10",
+      "dest": "185.220.101.99",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "74%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:08:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0046",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7292-X",
+      "time": "2026-07-10T13:38:46Z",
+      "source": "10.0.1.10",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "82%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:08:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0045",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2205-X",
+      "time": "2026-07-10T13:38:29Z",
+      "source": "10.0.1.10",
+      "dest": "185.220.101.99",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "83%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:08:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0044",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8265-X",
+      "time": "2026-07-10T13:38:16Z",
+      "source": "10.0.12.44",
+      "dest": "185.220.101.99",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "95%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:08:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0043",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7223-X",
+      "time": "2026-07-10T13:37:59Z",
+      "source": "10.0.12.44",
+      "dest": "45.89.222.102",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "85%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:07:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0042",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9152-X",
+      "time": "2026-07-10T13:37:46Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "78%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:07:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0041",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3634-X",
+      "time": "2026-07-10T13:37:29Z",
+      "source": "203.0.113.5",
+      "dest": "185.220.101.99",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "81%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:07:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0040",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6735-X",
+      "time": "2026-07-10T13:37:16Z",
+      "source": "10.0.1.10",
+      "dest": "45.89.222.102",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "98%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:07:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0039",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4287-X",
+      "time": "2026-07-10T13:36:59Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "94%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:06:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0038",
+      "title": "SQL Injection on Core DB",
+      "severity": "high",
+      "system": "Snort IDS",
+      "eventId": "EV-2101-M",
+      "time": "2026-07-10T13:36:55Z",
+      "source": "198.51.100.22",
+      "dest": "10.0.6.44",
+      "asset": "DB-PROD-01",
+      "status": "escalated",
+      "tiMatched": true,
+      "description": "Incoming SQL injection signature detected attacking web servers database parameters.",
+      "threatIntel": {
+        "actor": "Manual Simulator",
+        "confidence": "100%",
+        "malware": "Simulation Payload",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01",
+          "role": "Target Host"
+        },
+        {
+          "class": "ip",
+          "val": "198.51.100.22",
+          "role": "Source IP"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:06:55",
+          "title": "Alert Generated",
+          "details": "Manually simulated SOC threat.",
+          "active": true
+        },
+        {
+          "time": "19:08:48",
+          "title": "Status Changed to ESCALATED",
+          "details": "Manual status triage performed by user secops-mgr.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0037",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7576-X",
+      "time": "2026-07-10T13:36:46Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "86%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:06:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0036",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9244-X",
+      "time": "2026-07-10T13:36:29Z",
+      "source": "10.0.12.44",
+      "dest": "198.51.100.82",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "79%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:06:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0035",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3476-X",
+      "time": "2026-07-10T13:36:16Z",
+      "source": "10.0.1.10",
+      "dest": "github.com/payloads",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "81%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:06:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0034",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2473-X",
+      "time": "2026-07-10T13:35:59Z",
+      "source": "10.0.6.44",
+      "dest": "github.com/payloads",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "92%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:05:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0033",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6100-X",
+      "time": "2026-07-10T13:35:46Z",
+      "source": "203.0.113.5",
+      "dest": "198.51.100.82",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "72%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:05:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0032",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7442-X",
+      "time": "2026-07-10T13:35:29Z",
+      "source": "10.0.6.44",
+      "dest": "185.220.101.99",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "70%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:05:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0031",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1331-X",
+      "time": "2026-07-10T13:35:16Z",
+      "source": "10.0.1.10",
+      "dest": "github.com/payloads",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "83%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:05:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0030",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5589-X",
+      "time": "2026-07-10T13:34:59Z",
+      "source": "10.0.4.15",
+      "dest": "github.com/payloads",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "73%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:04:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0029",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6023-X",
+      "time": "2026-07-10T13:34:46Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "88%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:04:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0028",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-4435-X",
+      "time": "2026-07-10T13:34:29Z",
+      "source": "10.0.6.44",
+      "dest": "45.89.222.102",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "77%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:04:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0027",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-5072-X",
+      "time": "2026-07-10T13:34:16Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "74%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:04:16",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0026",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2305-X",
+      "time": "2026-07-10T13:33:59Z",
+      "source": "10.0.1.10",
+      "dest": "185.220.101.99",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "77%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:03:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0025",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1699-X",
+      "time": "2026-07-10T13:33:46Z",
+      "source": "10.0.6.44",
+      "dest": "45.89.222.102",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "89%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:03:46",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0024",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8472-X",
+      "time": "2026-07-10T13:33:29Z",
+      "source": "203.0.113.5",
+      "dest": "github.com/payloads",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "74%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:03:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0023",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3002-X",
+      "time": "2026-07-10T13:32:59Z",
+      "source": "10.0.1.10",
+      "dest": "198.51.100.82",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "99%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:02:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0022",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3163-X",
+      "time": "2026-07-10T13:32:29Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "95%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:02:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0021",
+      "title": "AWS S3 Bucket Public ACL Modification",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-7055-X",
+      "time": "2026-07-10T13:31:59Z",
+      "source": "10.0.1.10",
+      "dest": "198.51.100.82",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "83%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:01:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0020",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9012-X",
+      "time": "2026-07-10T13:31:29Z",
+      "source": "10.0.6.44",
+      "dest": "github.com/payloads",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "74%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:01:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0019",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-3860-X",
+      "time": "2026-07-10T13:30:59Z",
+      "source": "10.0.4.15",
+      "dest": "45.89.222.102",
+      "asset": "DB-PROD-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DB-PROD-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 45.89.222.102 context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "72%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:00:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0018",
+      "title": "Exchange PowerShell Admin Abuse Detected",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2640-X",
+      "time": "2026-07-10T13:30:29Z",
+      "source": "203.0.113.5",
+      "dest": "github.com/payloads",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "81%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "19:00:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0017",
+      "title": "Outbound SCP Backup Upload Spike",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-2288-X",
+      "time": "2026-07-10T13:29:59Z",
+      "source": "10.0.4.15",
+      "dest": "198.51.100.82",
+      "asset": "Production AWS Env",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Production AWS Env. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "84%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Production AWS Env",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "18:59:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0016",
+      "title": "Potential WannaCry Killswitch Bypass attempt",
+      "severity": "critical",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9319-X",
+      "time": "2026-07-10T13:29:29Z",
+      "source": "10.0.4.15",
+      "dest": "185.220.101.99",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host DC-01.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "81%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "18:59:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0015",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6467-X",
+      "time": "2026-07-10T13:28:59Z",
+      "source": "10.0.6.44",
+      "dest": "github.com/payloads",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "76%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "18:58:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0014",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-1914-X",
+      "time": "2026-07-10T13:28:29Z",
+      "source": "10.0.1.10",
+      "dest": "198.51.100.82",
+      "asset": "WS-LEGAL-02.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host WS-LEGAL-02.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT29",
+        "confidence": "84%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-02.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.1.10",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "18:58:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0013",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-6717-X",
+      "time": "2026-07-10T13:27:59Z",
+      "source": "10.0.12.44",
+      "dest": "198.51.100.82",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 198.51.100.82 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "88%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.12.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "18:57:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0012",
+      "title": "LSASS Memory Shadow Snapshot Dump",
+      "severity": "high",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-9001-X",
+      "time": "2026-07-10T13:27:29Z",
+      "source": "203.0.113.5",
+      "dest": "185.220.101.99",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting 185.220.101.99 context credentials.",
+      "threatIntel": {
+        "actor": "APT41",
+        "confidence": "75%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.5",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "18:57:29",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0011",
+      "title": "WS-LEGAL-02 Process Masquerading (svchost)",
+      "severity": "medium",
+      "system": "Sentinel Telemetry Engine",
+      "eventId": "EV-8389-X",
+      "time": "2026-07-10T13:26:59Z",
+      "source": "10.0.6.44",
+      "dest": "github.com/payloads",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": false,
+      "description": "An automated detection routine triggered on target host Exchange.rebel.ops. Outbound telemetry indicates suspicious activity targeting github.com/payloads context credentials.",
+      "threatIntel": {
+        "actor": "Unknown Threat Actor",
+        "confidence": "76%",
+        "malware": "Suspicious Payload Injection",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Victim Node"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.6.44",
+          "role": "Source Address"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "18:56:59",
+          "title": "Alert Triggered",
+          "details": "Automatic telemetry collection.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0001",
+      "title": "Cobalt Strike Beacon Execution Detected",
+      "severity": "critical",
+      "system": "CrowdStrike Falcon",
+      "eventId": "EV-9921-A",
+      "time": "2026-07-10T18:02:15Z",
+      "source": "10.0.4.15 (DC-01)",
+      "dest": "185.220.101.5 (External IP)",
+      "asset": "DC-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "A Cobalt Strike beacon communication sequence was identified running under LSASS shell credentials. The process spawned child processes attempting connection to known Tor exit nodes and suspicious external Command and Control (C2) domains.",
+      "threatIntel": {
+        "actor": "APT29 (Cozy Bear)",
+        "confidence": "96%",
+        "malware": "Cobalt Strike / Beacon",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1071.004",
+        "T1041",
+        "T1021"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Target Asset"
+        },
+        {
+          "class": "ip",
+          "val": "10.0.4.15",
+          "role": "Source IP"
+        },
+        {
+          "class": "ip",
+          "val": "185.220.101.5",
+          "role": "Malicious Dest IP"
+        },
+        {
+          "class": "user",
+          "val": "SYSTEM",
+          "role": "Security Context"
+        },
+        {
+          "class": "process",
+          "val": "lsass.exe",
+          "role": "Parent Execution"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "18:02:15",
+          "title": "Security Alert Generated",
+          "details": "CrowdStrike detected threat execution sequence.",
+          "active": true
+        },
+        {
+          "time": "18:03:00",
+          "title": "Threat Intel Enriched",
+          "details": "Target destination IP matched AlienVault OTX active C2 indicators.",
+          "active": true
+        },
+        {
+          "time": "18:04:10",
+          "title": "Automatic Containment Attempt",
+          "details": "Host isolation recommended. Pending manager verification.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0002",
+      "title": "LockBit 3.0 Ransomware Execution Attempt",
+      "severity": "critical",
+      "system": "SentinelOne Core",
+      "eventId": "EV-8822-B",
+      "time": "2026-07-10T17:58:30Z",
+      "source": "10.0.12.82 (WS-LEGAL-04)",
+      "dest": "Local Disk (D:\\)",
+      "asset": "WS-LEGAL-04 (Legal Workstation)",
+      "status": "investigating",
+      "tiMatched": true,
+      "description": "High-volume file modifications and entropy changes consistent with ransomware encryption patterns were detected. The SentinelOne agent intercepted the process and suspended execution.",
+      "threatIntel": {
+        "actor": "LockBit Syndicate",
+        "confidence": "98%",
+        "malware": "LockBit 3.0 (Black)",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1486",
+        "T1562.001",
+        "T1543.003"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-04",
+          "role": "Impacted Host"
+        },
+        {
+          "class": "file",
+          "val": "D:\\Legal_Arch.zip",
+          "role": "Encryption Target"
+        },
+        {
+          "class": "process",
+          "val": "lb3.exe",
+          "role": "Malicious Payload"
+        },
+        {
+          "class": "user",
+          "val": "j.doe-legal",
+          "role": "Compromised User"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "17:58:30",
+          "title": "Ransomware Behavior Blocked",
+          "details": "File modification engine locked out. Process suspended.",
+          "active": true
+        },
+        {
+          "time": "17:59:15",
+          "title": "Incident Triaged by SentinelOne",
+          "details": "File recovery snapshots prepared.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0003",
+      "title": "APT41 Exfiltration Sequence Detected",
+      "severity": "critical",
+      "system": "Palo Alto NGFW",
+      "eventId": "EV-1029-F",
+      "time": "2026-07-10T17:45:00Z",
+      "source": "10.0.6.44 (DB-PROD-01)",
+      "dest": "45.89.222.18 (External Webserver)",
+      "asset": "DB-PROD-01 (MySQL Server)",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An unusual outbound SSH/SFTP session exfiltrating approximately 14.5 GB of compressed database backups to an unrecognized external host was flagged by firewall behavioral patterns.",
+      "threatIntel": {
+        "actor": "APT41 (Double Dragon)",
+        "confidence": "91%",
+        "malware": "ShadowPad / Winonti",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1048.002",
+        "T1114",
+        "T1078.002"
+      ],
+      "entities: ": [],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DB-PROD-01",
+          "role": "Database Server"
+        },
+        {
+          "class": "ip",
+          "val": "45.89.222.18",
+          "role": "Destination C2"
+        },
+        {
+          "class": "user",
+          "val": "sql_svc",
+          "role": "Access Context"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "17:45:00",
+          "title": "Outbound Data Exfiltration Alert",
+          "details": "14.5 GB volume limit breached on firewall egress rule.",
+          "active": true
+        },
+        {
+          "time": "17:46:20",
+          "title": "Actor Correlation Match",
+          "details": "Destination host IP matched active APT41 indicators.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0004",
+      "title": "LSASS Process Memory Dump (Credential Harvesting)",
+      "severity": "critical",
+      "system": "Sysmon Enterprise",
+      "eventId": "EV-4411-C",
+      "time": "2026-07-10T17:30:10Z",
+      "source": "10.0.2.110 (WS-HR-02)",
+      "dest": "Local Memory Dump (C:\\Temp\\lsass.dmp)",
+      "asset": "WS-HR-02.rebel.ops",
+      "status": "escalated",
+      "tiMatched": false,
+      "description": "A memory read and dumping operation was performed on the Local Security Authority Subsystem Service (LSASS) using mimikatz-style Windows API calls. Highly suspicious attempt to extract administrator clear-text passwords.",
+      "threatIntel": {
+        "actor": "Unknown Penetration Tester / Insider Threat",
+        "confidence": "82%",
+        "malware": "Mimikatz dump",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1003.001",
+        "T1059.001"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-HR-02.rebel.ops",
+          "role": "Target Client"
+        },
+        {
+          "class": "user",
+          "val": "administrator",
+          "role": "Target Account"
+        },
+        {
+          "class": "process",
+          "val": "rundll32.exe",
+          "role": "Executing Process"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "17:30:10",
+          "title": "Sysmon Event ID 10 Registered",
+          "details": "Process access on lsass.exe request granted to rundll32.exe.",
+          "active": true
+        },
+        {
+          "time": "17:32:00",
+          "title": "SOC Alert Escalated",
+          "details": "Assigned to Tier 2 Lead for credential change validation.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0005",
+      "title": "Spearphishing Email Macro Code Execution",
+      "severity": "high",
+      "system": "Microsoft Defender for Office 365",
+      "eventId": "EV-2099-M",
+      "time": "2026-07-10T16:50:00Z",
+      "source": "mail.rebel.ops (Exchange Server)",
+      "dest": "WS-HR-01.rebel.ops (HR Client)",
+      "asset": "WS-HR-01.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "User downloaded a phishing document containing macros from a spoofed tax invoice email. The document spawned cmd.exe and downloaded a second-stage Agent Tesla spyware payload.",
+      "threatIntel": {
+        "actor": "FIN7 / Unknown phishing crew",
+        "confidence": "88%",
+        "malware": "Agent Tesla payload",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1566.001",
+        "T1204.002",
+        "T1105"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-HR-01.rebel.ops",
+          "role": "Victim Client"
+        },
+        {
+          "class": "user",
+          "val": "a.smith-hr",
+          "role": "Recipient User"
+        },
+        {
+          "class": "file",
+          "val": "TaxInvoice_Q3.doc",
+          "role": "Phishing Attachment"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "16:50:00",
+          "title": "Phishing Email Open",
+          "details": "Exchange recorded email delivery and open trigger.",
+          "active": true
+        },
+        {
+          "time": "16:51:10",
+          "title": "Macro Process Execution",
+          "details": "Word spawned powershell execution. Agent Tesla payload downloaded.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0006",
+      "title": "Exchange AD Domain Brute Force Attack",
+      "severity": "high",
+      "system": "Active Directory Logs",
+      "eventId": "EV-4625-N",
+      "time": "2026-07-10T16:15:45Z",
+      "source": "203.0.113.88 (Tor Proxy IP)",
+      "dest": "10.0.1.10 (Exchange / Active Directory)",
+      "asset": "Exchange.rebel.ops",
+      "status": "new",
+      "tiMatched": true,
+      "description": "Multiple failed authentication attempts detected against the Exchange Outlook Web Access endpoint. Failed attempts targeted 14 different management accounts within a 3-minute period.",
+      "threatIntel": {
+        "actor": "Brute-force Threat Actors",
+        "confidence": "90%",
+        "malware": "Spray attack tools",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1110.003",
+        "T1078.002"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "Exchange.rebel.ops",
+          "role": "Mail Server"
+        },
+        {
+          "class": "ip",
+          "val": "203.0.113.88",
+          "role": "Attacking IP"
+        },
+        {
+          "class": "user",
+          "val": "admin-exchange",
+          "role": "Target Profile"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "16:15:45",
+          "title": "Authentication Failures Spike",
+          "details": "148 authentication failures recorded in 3 minutes.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0007",
+      "title": "AWS IAM Role Assumption Privilege Escalation",
+      "severity": "high",
+      "system": "AWS CloudTrail",
+      "eventId": "EV-aws-77",
+      "time": "2026-07-10T15:40:22Z",
+      "source": "AWS IAM Console",
+      "dest": "AWS Cloud Infrastructure",
+      "asset": "Production AWS Environment",
+      "status": "investigating",
+      "tiMatched": false,
+      "description": "A database-developer role was assumed from an external IP address, followed immediately by security-group policy changes opening database ports to the wider internet.",
+      "threatIntel": {
+        "actor": "Internal Account Misconfig / Malicious session hijacking",
+        "confidence": "65%",
+        "malware": "N/A",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1078.004",
+        "T1136.003"
+      ],
+      "entities": [
+        {
+          "class": "domain",
+          "val": "AWS-Production",
+          "role": "Cloud Tenant"
+        },
+        {
+          "class": "user",
+          "val": "dev_user_ops",
+          "role": "Assumed User"
+        },
+        {
+          "class": "ip",
+          "val": "198.51.100.14",
+          "role": "Client Source IP"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "15:40:22",
+          "title": "IAM AssumeRole Event",
+          "details": "Role 'DB_Admin_Svc' assumed by user 'dev_user_ops'.",
+          "active": true
+        },
+        {
+          "time": "15:42:00",
+          "title": "Security Group Modified",
+          "details": "Inbound SSH rule open to 0.0.0.0/0.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0008",
+      "title": "AD DC Shadow Copy Extraction Attempt (NTDS.dit)",
+      "severity": "high",
+      "system": "Windows Defender ATP",
+      "eventId": "EV-7731-P",
+      "time": "2026-07-10T15:10:00Z",
+      "source": "10.0.4.15 (DC-01)",
+      "dest": "vssadmin dump file",
+      "asset": "DC-01.rebel.ops",
+      "status": "escalated",
+      "tiMatched": false,
+      "description": "Execution of vssadmin command-line parameters attempting to create a volume shadow copy of the active directory database (ntds.dit). Intention is offline credential decryption.",
+      "threatIntel": {
+        "actor": "Adversary exploiting AD Database Dump",
+        "confidence": "80%",
+        "malware": "ntds.dit extractor",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1003.003",
+        "T1059.001"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "DC-01.rebel.ops",
+          "role": "Active Directory DC"
+        },
+        {
+          "class": "process",
+          "val": "vssadmin.exe",
+          "role": "Executing Utility"
+        },
+        {
+          "class": "user",
+          "val": "SYSTEM",
+          "role": "Running Privilege"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "15:10:00",
+          "title": "vssadmin command flagged",
+          "details": "Volume creation command intercepted and blocked.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0009",
+      "title": "Suspicious PowerShell Ingestion Script Running",
+      "severity": "medium",
+      "system": "Sysmon Enterprise",
+      "eventId": "EV-3211-P",
+      "time": "2026-07-10T14:55:00Z",
+      "source": "10.0.12.45 (WS-LEGAL-01)",
+      "dest": "GitHub Raw (Gist)",
+      "asset": "WS-LEGAL-01 (Legal Client)",
+      "status": "investigating",
+      "tiMatched": false,
+      "description": "An obfuscated base64 encoded PowerShell script was loaded in memory on legal client workstation. The script retrieves telemetry libraries from a Gist repository.",
+      "threatIntel": {
+        "actor": "Unknown",
+        "confidence": "50%",
+        "malware": "PowerShell Downloader",
+        "status": "TI CHECK FAILED"
+      },
+      "mitre": [
+        "T1059.001",
+        "T1140"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-LEGAL-01",
+          "role": "Legal client"
+        },
+        {
+          "class": "process",
+          "val": "powershell.exe",
+          "role": "Command Engine"
+        },
+        {
+          "class": "user",
+          "val": "a.legal-clerk",
+          "role": "User Profile"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "14:55:00",
+          "title": "Obfuscated powershell script ran",
+          "details": "Bypass execution policy used to load shell script.",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "SOC-2026-0010",
+      "title": "Tor Exit Node Connection Attempt",
+      "severity": "medium",
+      "system": "Palo Alto NGFW",
+      "eventId": "EV-0091-E",
+      "time": "2026-07-10T14:10:35Z",
+      "source": "10.0.10.12 (WS-SALES-10)",
+      "dest": "109.163.220.129 (Tor Router)",
+      "asset": "WS-SALES-10 (Sales Client)",
+      "status": "new",
+      "tiMatched": true,
+      "description": "An outgoing connection attempt was observed on standard ports to a registered Tor directory/routing server node. Blocked by egress security policies.",
+      "threatIntel": {
+        "actor": "Tor proxy relay",
+        "confidence": "95%",
+        "malware": "Tor browser / anonymity agent",
+        "status": "TI MATCHED"
+      },
+      "mitre": [
+        "T1071"
+      ],
+      "entities": [
+        {
+          "class": "host",
+          "val": "WS-SALES-10",
+          "role": "Target workstation"
+        },
+        {
+          "class": "ip",
+          "val": "109.163.220.129",
+          "role": "Tor Router IP"
+        },
+        {
+          "class": "user",
+          "val": "r.sales-rep",
+          "role": "Logged User"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "14:10:35",
+          "title": "Egress Connection Intercepted",
+          "details": "Tor router target blocked by Palo Alto.",
+          "active": true
+        }
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "name": "APT29 (Cozy Bear)",
+      "level": "Critical",
+      "status": "Active",
+      "campaigns": "Operation NightShade"
+    },
+    {
+      "name": "LockBit Syndicate",
+      "level": "Critical",
+      "status": "Mitigated",
+      "campaigns": "LockBit Outbreak \u2014 Legal Dept"
+    },
+    {
+      "name": "APT41 (Double Dragon)",
+      "level": "Critical",
+      "status": "Active",
+      "campaigns": "Database Exfil Sequence"
+    },
+    {
+      "name": "FIN7 Phishing Crew",
+      "level": "High",
+      "status": "Active",
+      "campaigns": "HR Phishing Campaign"
+    },
+    {
+      "name": "Threat Actor Spray Group",
+      "level": "High",
+      "status": "Active",
+      "campaigns": "Cloud Credential Attack"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "CAMP-01",
+      "title": "Operation NightShade",
+      "status": "active",
+      "severity": "critical",
+      "desc": "Coordinated adversary intrusion campaign targeting enterprise domain controllers. Payload execution incorporates Cobalt Strike beacon implants, exfiltrating credential hashes to external C2 nodes.",
+      "alerts": 4,
+      "iocs": 3,
+      "assets": 3,
+      "actors": [
+        "APT29",
+        "Cozy Bear"
+      ],
+      "mitre": [
+        "T1059.001",
+        "T1003.001",
+        "T1041",
+        "T1077",
+        "T1021"
+      ],
+      "timeline": [
+        {
+          "date": "Jul 10, 18:02",
+          "details": "Active Cobalt Strike beacon detected on Domain Controller."
+        },
+        {
+          "date": "Jul 10, 15:10",
+          "details": "NTDS.dit Shadow copy extraction attempt on DC-01."
+        }
+      ]
+    },
+    {
+      "id": "CAMP-02",
+      "title": "LockBit Outbreak \u2014 Legal Dept",
+      "status": "contained",
+      "severity": "critical",
+      "desc": "Outbreak of LockBit 3.0 ransomware targeting legal department workstations. Endpoint agents contained file system changes, though persistent backdoors require credential purging.",
+      "alerts": 2,
+      "iocs": 1,
+      "assets": 2,
+      "actors": [
+        "LockBit Syndicate"
+      ],
+      "mitre": [
+        "T1486",
+        "T1562.001",
+        "T1543.003"
+      ],
+      "timeline": [
+        {
+          "date": "Jul 10, 17:58",
+          "details": "Ransomware encryption suspended on WS-LEGAL-04."
+        },
+        {
+          "date": "Jul 10, 14:55",
+          "details": "Obfuscated PowerShell loader script verified on WS-LEGAL-01."
+        }
+      ]
+    },
+    {
+      "id": "CAMP-03",
+      "title": "HR Phishing Campaign",
+      "status": "active",
+      "severity": "high",
+      "desc": "Spear-phishing vector targeting human resources staff. Delivery uses macro-enabled tax documents deploying Agent Tesla spyware components to capture keystrokes and credentials.",
+      "alerts": 4,
+      "iocs": 3,
+      "assets": 2,
+      "actors": [
+        "FIN7 Phishing Crew"
+      ],
+      "mitre": [
+        "T1566.001",
+        "T1204.002",
+        "T1105",
+        "T1071.004"
+      ],
+      "timeline": [
+        {
+          "date": "Jul 10, 16:50",
+          "details": "Agent Tesla execution recorded on WS-HR-01."
+        }
+      ]
+    },
+    {
+      "id": "CAMP-04",
+      "title": "Cloud Credential Attack",
+      "status": "active",
+      "severity": "high",
+      "desc": "Brute force and credential spray operations directed towards Exchange and Azure Active Directory profiles originating from Tor exit addresses, culminating in AWS IAM role assumptions.",
+      "alerts": 3,
+      "iocs": 3,
+      "assets": 3,
+      "actors": [
+        "Unknown Threat Actors"
+      ],
+      "mitre": [
+        "T1110.003",
+        "T1078.004",
+        "T1136.003"
+      ],
+      "timeline": [
+        {
+          "date": "Jul 10, 16:15",
+          "details": "Exchange failed login spray identified from 203.0.113.88."
+        },
+        {
+          "date": "Jul 10, 15:40",
+          "details": "AWS Database Role assumption from unrecognized IP."
+        }
+      ]
+    }
+  ],
+  "huntingQueries": [
+    {
+      "id": "q1",
+      "title": "Cobalt Strike Beacon Patterns",
+      "version": "v1.2",
+      "tag": "APT29",
+      "results": 2,
+      "author": "secops-mgr",
+      "desc": "Scan network traffic for standard beacon communication beacons and matching TCP handshake profiles."
+    },
+    {
+      "id": "q2",
+      "title": "LSASS Memory Dump Attempts",
+      "version": "v2.0",
+      "tag": "Credential Access",
+      "results": 2,
+      "author": "secops-lead",
+      "desc": "Identify process access requests on LSASS memory vectors targeting credential extraction."
+    },
+    {
+      "id": "q3",
+      "title": "Tor Exit Node Connections",
+      "version": "v1.0",
+      "tag": "Anonymization",
+      "results": 2,
+      "author": "tier1-lead",
+      "desc": "Match outgoing system firewalls logs with registered and updated lists of active Tor routing proxies."
+    },
+    {
+      "id": "q4",
+      "title": "Suspicious PowerShell Scripts",
+      "version": "v1.4",
+      "tag": "Execution",
+      "results": 1,
+      "author": "secops-mgr",
+      "desc": "Check endpoint command telemetry for obfuscated, base64 encoded, or bypass-policy PowerShell scripts."
+    },
+    {
+      "id": "q5",
+      "title": "Ransomware File Extensions",
+      "version": "v2.1",
+      "tag": "Impact",
+      "results": 1,
+      "author": "threat-intel",
+      "desc": "Flag spikes in filesystem modifications involving known ransomware output header extensions (e.g. .lockbit, .wannacry)."
+    },
+    {
+      "id": "q6",
+      "title": "AWS Privilege Escalation Logs",
+      "version": "v1.1",
+      "tag": "Cloud Security",
+      "results": 1,
+      "author": "cloud-sec",
+      "desc": "Audit CloudTrail console policies for unusual role assumptions followed by group rules overrides."
+    }
+  ],
+  "compliancePCI": [
+    {
+      "req": "Req 3",
+      "name": "Protect stored cardholder data",
+      "alerts": 3,
+      "status": "warning"
+    },
+    {
+      "req": "Req 4",
+      "name": "Encrypt transmission of cardholder data across open, public networks",
+      "alerts": 0,
+      "status": "compliant"
+    },
+    {
+      "req": "Req 5",
+      "name": "Protect all systems against malware and regularly update anti-virus software",
+      "alerts": 1,
+      "status": "compliant"
+    },
+    {
+      "req": "Req 6",
+      "name": "Develop and maintain secure systems and software applications",
+      "alerts": 5,
+      "status": "warning"
+    },
+    {
+      "req": "Req 7",
+      "name": "Restrict access to cardholder data by business need-to-know",
+      "alerts": 0,
+      "status": "compliant"
+    },
+    {
+      "req": "Req 8",
+      "name": "Identify and authenticate access to system components",
+      "alerts": 12,
+      "status": "critical"
+    },
+    {
+      "req": "Req 10",
+      "name": "Track and monitor all access to network resources and cardholder data",
+      "alerts": 2,
+      "status": "compliant"
+    },
+    {
+      "req": "Req 11",
+      "name": "Regularly test security systems and network operational processes",
+      "alerts": 0,
+      "status": "compliant"
+    }
+  ],
+  "scheduledReports": [
+    {
+      "title": "Daily SOC Threat Summary",
+      "timing": "Every day at 08:00 (PDF format, 5 recipients)",
+      "active": true
+    },
+    {
+      "title": "Weekly Executive Security Brief",
+      "timing": "Every Monday at 09:00 (PDF format, 12 recipients)",
+      "active": true
+    },
+    {
+      "title": "Monthly Compliance Audit Report",
+      "timing": "1st of month at 10:00 (HTML format, 8 recipients)",
+      "active": true
+    }
+  ]
+}
