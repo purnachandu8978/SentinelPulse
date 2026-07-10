@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SentinelPulse - Security Operations Platform</title>
+  <!-- Google Fonts - Outfit for modern UI typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- ChartJS for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="theme-dark">
+
+  <!-- Main Application Wrapper -->
+  <div id="app-shell" class="app-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <i data-lucide="shield-alert" class="brand-icon"></i>
+          <span class="pulse-dot"></span>
+        </div>
+        <div class="brand-text">
+          <h2>SENTINEL</h2>
+          <span class="brand-sub">SOC PLATFORM</span>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#/" class="nav-link active" data-route="dashboard">
+              <i data-lucide="layout-dashboard"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#/alerts" class="nav-link" data-route="alerts">
+              <i data-lucide="bell-ring"></i>
+              <span>Alert Queue</span>
+              <span class="badge badge-critical" id="sidebar-alert-count">6</span>
+            </a>
+          </li>
+          <li>
+            <a href="#/graph" class="nav-link" data-route="graph">
+              <i data-lucide="network"></i>
+              <span>Entity Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="#/mitre" class="nav-link" data-route="mitre">
+              <i data-lucide="grid"></i>
+              <span>MITRE ATT&CK</span>
+            </a>
+          </li>
+          <li>
+            <a href="#/hunting" class="nav-link" data-route="hunting">
+              <i data-lucide="crosshair"></i>
+              <span>Hunting</span>
+            </a>
+          </li>
+          <li>
+            <a href="#/campaigns" class="nav-link" data-route="campaigns">
+              <i data-lucide="server-crash"></i>
+              <span>Campaigns</span>
+              <span class="badge badge-active-campaigns">3</span>
+            </a>
+          </li>
+          <li>
+            <a href="#/kpis" class="nav-link" data-route="kpis">
+              <i data-lucide="trending-up"></i>
+              <span>Management KPIs</span>
+            </a>
+          </li>
+          <li>
+            <a href="#/compliance" class="nav-link" data-route="compliance">
+              <i data-lucide="clipboard-check"></i>
+              <span>Compliance</span>
+            </a>
+          </li>
+          <li>
+            <a href="#/wall" class="nav-link nav-link-special" data-route="wall">
+              <i data-lucide="tv"></i>
+              <span>Wall Mode</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-panel">
+          <div class="status-indicator">
+            <span class="status-dot online"></span>
+            <span class="status-text">SIEM Status: Connected</span>
+          </div>
+          <div class="version-info">v2.4.1</div>
+        </div>
+        <div class="user-profile-summary">
+          <div class="user-avatar">SM</div>
+          <div class="user-details">
+            <div class="user-name">secops-mgr</div>
+            <div class="user-role">SOC Manager</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Content Workspace -->
+    <div class="main-workspace">
+      
+      <!-- Top Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button id="toggle-sidebar" class="btn-icon">
+            <i data-lucide="menu"></i>
+          </button>
+          <div class="global-search">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" placeholder="Search events, assets, IPs, or users..." id="global-search-input">
+            <span class="search-shortcut">⌘K</span>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="header-action-group">
+            <!-- Ticker summary -->
+            <div class="live-threat-feed">
+              <span class="feed-label">Threat intel feed:</span>
+              <div class="feed-ticker-container">
+                <span class="feed-ticker-item text-critical">APT29 actively targeting Domain Controllers (Operation NightShade)</span>
+              </div>
+            </div>
+            
+            <button class="btn-icon text-muted" title="API Status">
+              <i data-lucide="database-backup"></i>
+            </button>
+            
+            <div class="dropdown-container">
+              <button class="btn-icon relative" id="notification-bell" title="Notifications">
+                <i data-lucide="bell"></i>
+                <span class="count-badge">5</span>
+              </button>
+              <!-- Notifications Dropdown would go here -->
+            </div>
+            
+            <button class="btn-icon" title="Settings">
+              <i data-lucide="settings"></i>
+            </button>
+          </div>
+          
+          <div class="header-divider"></div>
+          
+          <div class="header-user">
+            <div class="user-avatar">SM</div>
+            <div class="user-info">
+              <span class="name">SOC Manager</span>
+              <span class="status-text">Active Shift</span>
+            </div>
+            <i data-lucide="chevron-down" class="user-chevron"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic View Viewport -->
+      <main class="app-viewport">
+
+        <!-- 1. DASHBOARD VIEW -->
+        <section id="view-dashboard" class="app-view active-view">
+          <div class="view-header">
+            <div>
+              <h1 class="view-title">SOC Commander</h1>
+              <p class="view-subtitle">Real-time security operations control board</p>
+            </div>
+            <div class="view-actions">
+              <span class="timestamp-update" id="dashboard-clock">Last updated: Just now</span>
+              <button class="btn btn-secondary btn-icon-text" id="refresh-dashboard">
+                <i data-lucide="refresh-cw"></i>
+                <span>Refresh</span>
+              </button>
+              <button class="btn btn-primary btn-icon-text btn-trigger-simulate">
+                <i data-lucide="plus-circle"></i>
+                <span>Simulate Threat</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Kpi summary row -->
+          <div class="stats-grid">
+            <div class="stats-card glow-critical">
+              <div class="card-metric">
+                <div class="metric-label">Open Alerts</div>
+                <div class="metric-value text-critical" id="kpi-open-alerts">6</div>
+              </div>
+              <div class="card-icon critical">
+                <i data-lucide="alert-triangle"></i>
+              </div>
+              <div class="card-trend text-muted">
+                Active alerts needing triage
+              </div>
+            </div>
+
+            <div class="stats-card glow-high">
+              <div class="card-metric">
+                <div class="metric-label">Critical Open</div>
+                <div class="metric-value text-high" id="kpi-critical-open">3</div>
+              </div>
+              <div class="card-icon high">
+                <i data-lucide="shield-alert"></i>
+              </div>
+              <div class="card-trend text-critical">
+                <i data-lucide="arrow-up-right"></i> Immediate action required
+              </div>
+            </div>
+
+            <div class="stats-card">
+              <div class="card-metric">
+                <div class="metric-label">Mean Time to Detect (MTTD)</div>
+                <div class="metric-value">12.3 min</div>
+              </div>
+              <div class="card-icon info">
+                <i data-lucide="timer"></i>
+              </div>
+              <div class="card-trend text-success">
+                <i data-lucide="arrow-down-left"></i> -8.5% vs 15m SLA target
+              </div>
+            </div>
+
+            <div class="stats-card">
+              <div class="card-metric">
+                <div class="metric-label">Mean Time to Respond (MTTR)</div>
+                <div class="metric-value">45.7 min</div>
+              </div>
+              <div class="card-icon info">
+                <i data-lucide="hourglass"></i>
+              </div>
+              <div class="card-trend text-success">
+                <i data-lucide="arrow-down-left"></i> -12.3% vs 60m SLA target
+              </div>
+            </div>
+          </div>
+
+          <!-- Dashboard Dashboard Analytics -->
+          <div class="dashboard-grid">
+            <!-- Streaming Alert Volume -->
+            <div class="panel col-span-2">
+              <div class="panel-header">
+                <div class="panel-title">
+                  <i data-lucide="activity" class="panel-icon text-info"></i>
+                  <span>Live Alert Volume (Streaming)</span>
+                </div>
+                <div class="panel-controls">
+                  <span class="live-pulse"></span>
+                  <span class="text-xs text-muted">Real-time telemetry</span>
+                </div>
+              </div>
+              <div class="panel-body chart-panel-body">
+                <canvas id="chart-live-alerts"></canvas>
+              </div>
+            </div>
+
+            <!-- Severity Distribution -->
+            <div class="panel">
+              <div class="panel-header">
+                <div class="panel-title">
+                  <i data-lucide="pie-chart" class="panel-icon text-info"></i>
+                  <span>Severity Distribution</span>
+                </div>
+              </div>
+              <div class="panel-body chart-panel-body flex-center">
+                <div class="chart-container-donut">
+                  <canvas id="chart-severity-donut"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Alerts List -->
+            <div class="panel col-span-2">
+              <div class="panel-header">
+                <div class="panel-title">
+                  <i data-lucide="list" class="panel-icon text-info"></i>
+                  <span>Recent Unresolved Alerts</span>
+                </div>
+                <a href="#/alerts" class="text-link">View full queue <i data-lucide="arrow-right"></i></a>
+              </div>
+              <div class="panel-body no-padding">
+                <div class="dashboard-table-container">
+                  <table class="data-table dashboard-table">
+                    <thead>
+                      <tr>
+                        <th>Severity</th>
+                        <th>Alert Name</th>
+                        <th>Target Asset</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dashboard-recent-alerts-body">
+                      <!-- Rendered by JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Threat Actor Highlights -->
+            <div class="panel">
+              <div class="panel-header">
+                <div class="panel-title">
+                  <i data-lucide="skull" class="panel-icon text-critical"></i>
+                  <span>Top Threat Actors</span>
+                </div>
+              </div>
+              <div class="panel-body no-padding">
+                <ul class="actor-list" id="dashboard-actor-list">
+                  <!-- Rendered by JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. ALERTS VIEW -->
+        <section id="view-alerts" class="app-view">
+          <div class="split-layout">
+            <!-- Left Side: Alert List & Filters -->
+            <div class="split-left flex-grow">
+              <div class="view-header">
+                <div>
+                  <h1 class="view-title">Alert Queue</h1>
+                  <p class="view-subtitle">Triaging security events and incoming alerts</p>
+                </div>
+                <div class="view-actions">
+                  <button class="btn btn-primary btn-icon-text btn-trigger-simulate">
+                    <i data-lucide="plus-circle"></i>
+                    <span>Simulate Threat</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Filter Bar -->
+              <div class="filter-bar">
+                <div class="filter-group">
+                  <span class="filter-label">Severity:</span>
+                  <div class="checkbox-buttons">
+                    <label class="check-btn btn-critical">
+                      <input type="checkbox" checked value="critical" class="filter-severity">
+                      <span>Critical (<span id="count-critical">4</span>)</span>
+                    </label>
+                    <label class="check-btn btn-high">
+                      <input type="checkbox" checked value="high" class="filter-severity">
+                      <span>High (<span id="count-high">4</span>)</span>
+                    </label>
+                    <label class="check-btn btn-medium">
+                      <input type="checkbox" checked value="medium" class="filter-severity">
+                      <span>Medium (<span id="count-medium">2</span>)</span>
+                    </label>
+                    <label class="check-btn btn-low">
+                      <input type="checkbox" value="low" class="filter-severity">
+                      <span>Low (0)</span>
+                    </label>
+                    <label class="check-btn btn-info">
+                      <input type="checkbox" value="info" class="filter-severity">
+                      <span>Info (0)</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <div class="filter-group">
+                  <label class="toggle-switch">
+                    <input type="checkbox" id="filter-ti-match">
+                    <span class="slider"></span>
+                    <span class="toggle-label"><i data-lucide="fingerprint" class="icon-sm"></i> TI Matched Only</span>
+                  </label>
+                </div>
+
+                <div class="filter-group margin-left-auto">
+                  <span class="filter-label">Time:</span>
+                  <select class="form-select select-sm" id="filter-time-range">
+                    <option value="1h">Last 1 Hour</option>
+                    <option value="4h">Last 4 Hours</option>
+                    <option value="24h" selected>Last 24 Hours</option>
+                    <option value="7d">Last 7 Days</option>
+                    <option value="30d">Last 30 Days</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Queue Table Panel -->
+              <div class="panel">
+                <div class="panel-body no-padding overflow-x-auto">
+                  <table class="data-table" id="alerts-table">
+                    <thead>
+                      <tr>
+                        <th width="40"><input type="checkbox" id="select-all-alerts"></th>
+                        <th width="100">Severity</th>
+                        <th>Rule / Threat Definition</th>
+                        <th>Detected Time</th>
+                        <th>Source → Destination</th>
+                        <th>Impacted Asset</th>
+                      </tr>
+                    </thead>
+                    <tbody id="alerts-queue-body">
+                      <!-- Rendered by JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Alert Detail Drawer -->
+            <div class="split-right alert-detail-drawer" id="alert-details-sidebar">
+              <div class="drawer-empty-state" id="drawer-empty-view">
+                <i data-lucide="mouse-pointer-click" class="empty-icon text-muted"></i>
+                <h3>No Alert Selected</h3>
+                <p>Select an alert from the queue to view metadata, threat intelligence, timeline, and remediation actions.</p>
+              </div>
+
+              <div class="drawer-content hidden" id="drawer-detail-view">
+                <div class="drawer-header">
+                  <div class="drawer-header-top">
+                    <span class="badge" id="detail-severity-badge">CRITICAL</span>
+                    <span class="alert-id-code" id="detail-id">SOC-2026-0001</span>
+                    <button class="btn-icon ml-auto" id="close-detail-drawer">
+                      <i data-lucide="x"></i>
+                    </button>
+                  </div>
+                  <h2 class="alert-detail-title" id="detail-title">Cobalt Strike Beacon Execution Detected on DC-01</h2>
+                  <div class="alert-status-control mt-2">
+                    <span class="text-muted text-xs">STATUS:</span>
+                    <div class="btn-group-segmented">
+                      <button class="btn-segment active" data-status="new">New</button>
+                      <button class="btn-segment" data-status="investigating">Triage</button>
+                      <button class="btn-segment" data-status="escalated">Escalate</button>
+                      <button class="btn-segment" data-status="fp">FP</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="drawer-body">
+                  <div class="detail-section">
+                    <h3>Incident Summary</h3>
+                    <p id="detail-description">Execution of a highly suspicious Cobalt Strike beacon payload on the Domain Controller. The command shell established an outbound TCP connection to a known malicious host.</p>
+                  </div>
+
+                  <!-- Threat Intel Panel -->
+                  <div class="detail-section panel-outline glow-critical-subtle">
+                    <h3 class="text-critical flex-align-center">
+                      <i data-lucide="fingerprint" class="icon-sm mr-1"></i> Threat Intelligence (AlienVault OTX)
+                    </h3>
+                    <div class="ti-grid mt-2">
+                      <div>
+                        <div class="ti-label">Threat Actor</div>
+                        <div class="ti-value" id="detail-threat-actor">APT29 (Cozy Bear)</div>
+                      </div>
+                      <div>
+                        <div class="ti-label">Confidence</div>
+                        <div class="ti-value text-critical" id="detail-ti-confidence">96%</div>
+                      </div>
+                      <div>
+                        <div class="ti-label">Malware Family</div>
+                        <div class="ti-value" id="detail-malware-family">Cobalt Strike</div>
+                      </div>
+                      <div>
+                        <div class="ti-label">TI Match Status</div>
+                        <div class="ti-value text-critical"><span class="badge-dot dot-critical mr-1"></span>MATCHED</div>
+                      </div>
+                    </div>
+                    <div class="ti-tags mt-2" id="detail-mitre-tags">
+                      <!-- Rendered by JS -->
+                    </div>
+                  </div>
+
+                  <!-- Entities Panel -->
+                  <div class="detail-section">
+                    <h3>Involved Entities</h3>
+                    <div class="entity-list-vertical" id="detail-entities-list">
+                      <!-- Rendered by JS -->
+                    </div>
+                  </div>
+
+                  <!-- Timeline Panel -->
+                  <div class="detail-section">
+                    <h3>Incident Timeline</h3>
+                    <div class="timeline" id="detail-timeline">
+                      <!-- Rendered by JS -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="drawer-footer">
+                  <button class="btn btn-primary btn-full" id="btn-action-investigate">
+                    <i data-lucide="network"></i> Graph Investigation
+                  </button>
+                  <div class="drawer-footer-actions">
+                    <button class="btn btn-secondary" id="btn-action-escalate">
+                      <i data-lucide="shield-alert"></i> Escalate SOC
+                    </button>
+                    <button class="btn btn-secondary text-muted" id="btn-action-fp">
+                      <i data-lucide="check-square"></i> Mark FP
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. ENTITY GRAPH VIEW -->
+        <section id="view-graph" class="app-view">
+          <div class="view-header">
+            <div>
+              <h1 class="view-title">Entity Graph Explorer</h1>
+              <p class="view-subtitle">Interactive entity relationship map and lateral movement path analyzer</p>
+            </div>
+          </div>
+
+          <div class="graph-layout">
+            <!-- Left Side Control Panel -->
+            <div class="graph-controls-panel">
+              <div class="panel">
+                <div class="panel-header">
+                  <div class="panel-title">Graph Filtering</div>
+                </div>
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label class="form-label">Active Node Classes:</label>
+                    <div class="checkbox-list">
+                      <label class="check-row">
+                        <input type="checkbox" checked value="host" class="graph-node-filter">
+                        <span class="class-legend legend-host"></span>
+                        <span>Hosts & Servers</span>
+                      </label>
+                      <label class="check-row">
+                        <input type="checkbox" checked value="ip" class="graph-node-filter">
+                        <span class="class-legend legend-ip"></span>
+                        <span>IP Addresses</span>
+                      </label>
+                      <label class="check-row">
+                        <input type="checkbox" checked value="user" class="graph-node-filter">
+                        <span class="class-legend legend-user"></span>
+                        <span>User Accounts</span>
+                      </label>
+                      <label class="check-row">
+                        <input type="checkbox" checked value="domain" class="graph-node-filter">
+                        <span class="class-legend legend-domain"></span>
+                        <span>Active Directory Domains</span>
+                      </label>
+                      <label class="check-row">
+                        <input type="checkbox" checked value="file" class="graph-node-filter">
+                        <span class="class-legend legend-file"></span>
+                        <span>Files & Payloads</span>
+                      </label>
+                      <label class="check-row">
+                        <input type="checkbox" checked value="process" class="graph-node-filter">
+                        <span class="class-legend legend-process"></span>
+                        <span>Processes & DLLs</span>
+                      </label>
+                      <label class="check-row">
+                        <input type="checkbox" checked value="alert" class="graph-node-filter">
+                        <span class="class-legend legend-alert"></span>
+                        <span>Security Alerts</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Path Explorer Card -->
+              <div class="panel mt-4">
+                <div class="panel-header">
+                  <div class="panel-title">Path Finder Analysis</div>
+                </div>
+                <div class="panel-body">
+                  <p class="text-xs text-muted mb-3">Trace cyber lateral paths or correlations between two SOC entities.</p>
+                  
+                  <div class="form-group">
+                    <label class="form-label" for="graph-path-start">Start Entity:</label>
+                    <select class="form-select" id="graph-path-start">
+                      <!-- Loaded dynamically -->
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label" for="graph-path-end">Target Entity:</label>
+                    <select class="form-select" id="graph-path-end">
+                      <!-- Loaded dynamically -->
+                    </select>
+                  </div>
+
+                  <button class="btn btn-primary btn-full mt-2" id="btn-find-path">
+                    <i data-lucide="git-fork"></i> Map Attack Path
+                  </button>
+                  <button class="btn btn-secondary btn-full mt-2 hidden" id="btn-clear-path">
+                    Reset Path Highlight
+                  </button>
+                </div>
+              </div>
+
+              <!-- Graph Info Panel -->
+              <div class="panel mt-4">
+                <div class="panel-body info-stats-grid">
+                  <div>
+                    <div class="info-label">Active Nodes</div>
+                    <div class="info-val" id="graph-stat-nodes">14</div>
+                  </div>
+                  <div>
+                    <div class="info-label">Edges / Relations</div>
+                    <div class="info-val" id="graph-stat-edges">16</div>
+                  </div>
+                  <div class="col-span-2">
+                    <div class="info-label">TI Correlated Assets</div>
+                    <div class="info-val text-critical" id="graph-stat-ti">4 Matches</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side Visualization Area -->
+            <div class="graph-viewer-container">
+              <div class="graph-viewport-wrapper">
+                <div id="graph-canvas-container" class="graph-canvas-area">
+                  <!-- Generated interactive SVG graph -->
+                  <svg id="entity-graph-svg" width="100%" height="100%">
+                    <defs>
+                      <marker id="arrow" viewBox="0 0 10 10" refX="22" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3a4861" />
+                      </marker>
+                      <marker id="arrow-highlight" viewBox="0 0 10 10" refX="22" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff4c4c" />
+                      </marker>
+                    </defs>
+                    <g id="svg-zoom-group">
+                      <g id="svg-edges"></g>
+                      <g id="svg-nodes"></g>
+                    </g>
+                  </svg>
+                </div>
+                
+                <!-- Viewport Control Buttons -->
+                <div class="graph-overlay-controls">
+                  <button class="btn-icon" id="graph-zoom-in" title="Zoom In"><i data-lucide="zoom-in"></i></button>
+                  <button class="btn-icon" id="graph-zoom-out" title="Zoom Out"><i data-lucide="zoom-out"></i></button>
+                  <button class="btn-icon" id="graph-reset" title="Recenter View"><i data-lucide="maximize"></i></button>
+                </div>
+
+                <!-- Info Alert Floating HUD -->
+                <div class="graph-floating-hud" id="graph-hud">
+                  <div class="hud-title">Threat Propagation Map</div>
+                  <div class="hud-desc" id="graph-hud-text">Drag nodes to clean up layout. Click nodes for relationships. Highlighted paths reveal correlation chains.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. MITRE ATT&CK VIEW -->
+        <section id="view-mitre" class="app-view">
+          <div class="view-header">
+            <div>
+              <h1 class="view-title">MITRE ATT&CK Heatmap</h1>
+              <p class="view-subtitle">Mapping active enterprise threats to the global adversary tactic framework</p>
+            </div>
+          </div>
+
+          <!-- MITRE stats summary -->
+          <div class="stats-grid">
+            <div class="stats-card">
+              <div class="card-metric">
+                <div class="metric-label">Tactics Tracked</div>
+                <div class="metric-value">14 / 14</div>
+              </div>
+              <div class="card-icon info"><i data-lucide="compass"></i></div>
+            </div>
+            <div class="stats-card">
+              <div class="card-metric">
+                <div class="metric-label">Active Techniques Detected</div>
+                <div class="metric-value">72 / 73</div>
+              </div>
+              <div class="card-icon info"><i data-lucide="activity"></i></div>
+            </div>
+            <div class="stats-card glow-high">
+              <div class="card-metric">
+                <div class="metric-label">Total Alerts Mapped</div>
+                <div class="metric-value text-high">438</div>
+              </div>
+              <div class="card-icon high"><i data-lucide="layers"></i></div>
+            </div>
+            <div class="stats-card glow-critical">
+              <div class="card-metric">
+                <div class="metric-label">Top Threat Technique</div>
+                <div class="metric-value text-critical">T1059.001 (PowerShell)</div>
+              </div>
+              <div class="card-icon critical"><i data-lucide="terminal"></i></div>
+            </div>
+          </div>
+
+          <!-- MITRE Heatmap Matrix -->
+          <div class="mitre-matrix-panel">
+            <div class="panel">
+              <div class="panel-header">
+                <div class="panel-title">
+                  <i data-lucide="grid" class="panel-icon text-info"></i>
+                  <span>Tactical Execution Matrix (Enterprise)</span>
+                </div>
+                <div class="matrix-legend">
+                  <span class="legend-item"><span class="legend-box level-none"></span> 0 alerts</span>
+                  <span class="legend-item"><span class="legend-box level-low"></span> 1-5 alerts</span>
+                  <span class="legend-item"><span class="legend-box level-med"></span> 6-15 alerts</span>
+                  <span class="legend-item"><span class="legend-box level-high"></span> 16+ alerts</span>
+                </div>
+              </div>
+              <div class="panel-body no-padding overflow-x-auto">
+                <div class="mitre-matrix-grid" id="mitre-matrix-table-container">
+                  <!-- Rendered dynamically by JS to map columns of all tactics -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. HUNTING VIEW -->
+        <section id="view-hunting" class="app-view">
+          <div class="view-header">
+            <div>
+              <h1 class="view-title">Threat Hunting Workbench</h1>
+              <p class="view-subtitle">Execute search scripts and run queries against threat databases</p>
+            </div>
+          </div>
+
+          <div class="hunting-workspace-layout">
+            <!-- Left sidebar: Saved Queries -->
+            <aside class="hunting-saved-sidebar">
+              <div class="panel height-full">
+                <div class="panel-header">
+                  <div class="panel-title"><i data-lucide="bookmark" class="panel-icon"></i> Saved Hunting Queries</div>
+                </div>
+                <div class="panel-body no-padding">
+                  <ul class="saved-query-list" id="hunting-saved-queries">
+                    <!-- Rendered by JS -->
+                  </ul>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Main query builder -->
+            <div class="hunting-main-workspace">
+              <!-- Search query input bar -->
+              <div class="panel mb-4">
+                <div class="panel-body query-editor-panel">
+                  <div class="query-editor-wrapper">
+                    <span class="editor-prompt">&gt;_</span>
+                    <input type="text" class="query-code-input" id="hunting-query-input" placeholder="Enter query string (e.g. process.name:'powershell.exe' OR severity:'critical')...">
+                    <button class="btn btn-primary btn-icon-text" id="btn-run-hunt">
+                      <i data-lucide="play" class="icon-sm"></i>
+                      <span>Run Query</span>
+                    </button>
+                  </div>
+                  
+                  <div class="query-actions-row">
+                    <div class="query-syntax-tip">
+                      <span>Syntax: <code>field:"value" [AND/OR] field2:"value2"</code></span>
+                    </div>
+                    <div class="query-export-actions ml-auto">
+                      <button class="btn btn-secondary btn-sm" id="btn-export-csv"><i data-lucide="download"></i> Export CSV</button>
+                      <button class="btn btn-secondary btn-sm" id="btn-export-json"><i data-lucide="braces"></i> Export JSON</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Results Area -->
+              <div class="panel height-auto">
+                <div class="panel-header">
+                  <div class="panel-title">
+                    <i data-lucide="terminal" class="panel-icon text-info"></i>
+                    <span>Query Results</span>
+                  </div>
+                  <div class="results-stats">
+                    <span id="hunting-results-count" class="badge">0 Results</span>
+                  </div>
+                </div>
+                <div class="panel-body" id="hunting-results-panel-body">
+                  <!-- Rendered dynamically by JS -->
+                  <div class="hunting-empty-results" id="hunting-empty-state">
+                    <i data-lucide="terminal" class="empty-icon text-muted"></i>
+                    <h4>Execute Query to Fetch Results</h4>
+                    <p>Enter a query in the terminal input above, or load one of the saved SOC target vectors from the sidebar.</p>
+                  </div>
+
+                  <div class="hunting-active-results hidden" id="hunting-results-view">
+                    <!-- Dynamic histogram -->
+                    <div class="time-distribution-histogram mb-4">
+                      <h4>Time Distribution Density</h4>
+                      <div class="histogram-svg-wrapper">
+                        <canvas id="chart-hunting-histogram" height="100"></canvas>
+                      </div>
+                    </div>
+
+                    <!-- Filtered Alerts List -->
+                    <h4>Matching Telemetry Alerts</h4>
+                    <div class="dashboard-table-container mt-2">
+                      <table class="data-table">
+                        <thead>
+                          <tr>
+                            <th>Severity</th>
+                            <th>Alert / Correlation Rule</th>
+                            <th>Time</th>
+                            <th>Asset Node</th>
+                            <th>Log Reference ID</th>
+                          </tr>
+                        </thead>
+                        <tbody id="hunting-results-table-body">
+                          <!-- Rendered by JS -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. CAMPAIGNS VIEW -->
+        <section id="view-campaigns" class="app-view">
+          <div class="view-header">
+            <div>
+              <h1 class="view-title">Active Security Campaigns</h1>
+              <p class="view-subtitle">Active APT operations, phishing campaigns, and malware outbreak metrics</p>
+            </div>
+            <div class="view-actions">
+              <span class="badge badge-active-campaigns" style="padding: 6px 12px; font-size: 0.85rem;" id="campaigns-badge-total">3 Active · 4 Total</span>
+            </div>
+          </div>
+
+          <!-- Campaigns Grid -->
+          <div class="campaigns-grid" id="campaigns-cards-container">
+            <!-- Rendered dynamically by JS -->
+          </div>
+        </section>
+
+        <!-- 7. MANAGEMENT KPIS VIEW -->
+        <section id="view-kpis" class="app-view">
+          <div class="view-header">
+            <div>
+              <h1 class="view-title">Management KPIs & Metrics</h1>
+              <p class="view-subtitle">Performance trends, response metrics, and security posture monitoring dashboards</p>
+            </div>
+          </div>
+
+          <div class="kpis-layout">
+            <!-- Left Side: Composite Security Posture -->
+            <div class="kpis-sidebar">
+              <div class="panel text-center height-full">
+                <div class="panel-header border-none">
+                  <div class="panel-title mx-auto">Composite Posture Score</div>
+                </div>
+                <div class="panel-body flex-column flex-center pb-5">
+                  <div class="posture-score-gauge">
+                    <svg viewBox="0 0 100 100" class="gauge-svg">
+                      <circle cx="50" cy="50" r="40" class="gauge-bg"></circle>
+                      <circle cx="50" cy="50" r="40" class="gauge-fill" id="kpi-gauge-circle" stroke-dasharray="251.2" stroke-dashoffset="67.8"></circle>
+                    </svg>
+                    <div class="gauge-text">
+                      <span class="score" id="kpi-gauge-score">73</span>
+                      <span class="max">/100</span>
+                    </div>
+                  </div>
+                  <div class="gauge-verdict text-success mt-3 font-semibold">GOOD POSTURE</div>
+                  <p class="text-xs text-muted mt-2 px-3">Aggregated safety score based on unresolved threats, vulnerability management, and threat containment efficiency.</p>
+                  
+                  <div class="kpi-detail-list mt-4 w-full px-3">
+                    <div class="kpi-detail-item">
+                      <span class="text-muted">Total Open Alerts:</span>
+                      <span class="font-bold" id="kpis-open-total">187</span>
+                    </div>
+                    <div class="kpi-detail-item">
+                      <span class="text-muted">Critical Warnings:</span>
+                      <span class="font-bold text-critical" id="kpis-open-critical">4</span>
+                    </div>
+                    <div class="kpi-detail-item">
+                      <span class="text-muted">Escalated Incidents:</span>
+                      <span class="font-bold text-high" id="kpis-open-escalated">23</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Trend Charts -->
+            <div class="kpis-charts-grid flex-grow">
+              <div class="panel">
+                <div class="panel-header">
+                  <div class="panel-title"><i data-lucide="timer" class="panel-icon text-info"></i> Mean Time to Respond (MTTR Trend)</div>
+                </div>
+                <div class="panel-body chart-panel-body">
+                  <canvas id="chart-kpis-mttr"></canvas>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-header">
+                  <div class="panel-title"><i data-lucide="bar-chart-3" class="panel-icon text-info"></i> Daily Alert Volumes (7 Days)</div>
+                </div>
+                <div class="panel-body chart-panel-body">
+                  <canvas id="chart-kpis-volume"></canvas>
+                </div>
+              </div>
+
+              <div class="panel col-span-2">
+                <div class="panel-header">
+                  <div class="panel-title"><i data-lucide="check-circle" class="panel-icon text-success"></i> True Positive Escalation Rate</div>
+                </div>
+                <div class="panel-body chart-panel-body">
+                  <canvas id="chart-kpis-tprate"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. COMPLIANCE VIEW -->
+        <section id="view-compliance" class="app-view">
+          <div class="view-header">
+            <div>
+              <h1 class="view-title">Compliance & Executive Reporting</h1>
+              <p class="view-subtitle">Check cyber framework compliance status and compile SOC reports</p>
+            </div>
+          </div>
+
+          <div class="compliance-layout">
+            <!-- Left Side: PCI DSS Checklist -->
+            <div class="compliance-checklist-panel">
+              <div class="panel">
+                <div class="panel-header">
+                  <div class="panel-title"><i data-lucide="shield-check" class="panel-icon text-success"></i> PCI DSS Framework Audit</div>
+                </div>
+                <div class="panel-body no-padding">
+                  <div class="checklist-table-container">
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>Requirement Reference</th>
+                          <th>Current Status</th>
+                          <th>Associated Alerts</th>
+                        </tr>
+                      </thead>
+                      <tbody id="compliance-checklist-body">
+                        <!-- Loaded by JS -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Executive Report Builder -->
+            <div class="compliance-reporting-panel">
+              <div class="panel">
+                <div class="panel-header">
+                  <div class="panel-title"><i data-lucide="file-text" class="panel-icon"></i> Executive Report Builder</div>
+                </div>
+                <div class="panel-body">
+                  <p class="text-xs text-muted mb-3">Add widgets to draft an on-demand executive summary report for stakeholders.</p>
+                  
+                  <!-- Widget Selection -->
+                  <div class="builder-selection mb-3">
+                    <label class="form-label">Available Content Blocks:</label>
+                    <div class="widget-btn-grid" id="report-widget-picker">
+                      <button class="btn-widget-select" data-widget="mttd-mttr">
+                        <i data-lucide="timer" class="icon-sm"></i> MTTD/MTTR Trends
+                      </button>
+                      <button class="btn-widget-select" data-widget="actors">
+                        <i data-lucide="skull" class="icon-sm"></i> Threat Actor Map
+                      </button>
+                      <button class="btn-widget-select" data-widget="risk">
+                        <i data-lucide="grid" class="icon-sm"></i> Asset Risk Matrix
+                      </button>
+                      <button class="btn-widget-select" data-widget="timeline">
+                        <i data-lucide="history" class="icon-sm"></i> Incident Timeline
+                      </button>
+                      <button class="btn-widget-select" data-widget="feed">
+                        <i data-lucide="rss" class="icon-sm"></i> TI Feed Status
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Active Draft Layout area -->
+                  <div class="report-draft-layout">
+                    <label class="form-label">Active Report Document Sections (Click to remove / drag to reorder):</label>
+                    <div class="report-blocks-container" id="report-blocks-draft">
+                      <!-- Start default blocks -->
+                      <div class="report-block-item" data-block="summary">
+                        <i data-lucide="grip-vertical" class="grip-icon"></i>
+                        <span>Alert Summary Dashboard & SLA metrics</span>
+                        <button class="btn-remove-block"><i data-lucide="trash-2" class="icon-sm"></i></button>
+                      </div>
+                      <div class="report-block-item" data-block="mitre">
+                        <i data-lucide="grip-vertical" class="grip-icon"></i>
+                        <span>MITRE ATT&CK Framework coverage heatmap</span>
+                        <button class="btn-remove-block"><i data-lucide="trash-2" class="icon-sm"></i></button>
+                      </div>
+                      <div class="report-block-item" data-block="iocs">
+                        <i data-lucide="grip-vertical" class="grip-icon"></i>
+                        <span>Top Threat Intelligence Indicators (IOCs)</span>
+                        <button class="btn-remove-block"><i data-lucide="trash-2" class="icon-sm"></i></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Actions -->
+                  <div class="report-actions-panel mt-3">
+                    <button class="btn btn-primary" id="btn-export-pdf">
+                      <i data-lucide="file-type-2"></i> Generate Executive PDF
+                    </button>
+                    <button class="btn btn-secondary" id="btn-export-html">
+                      <i data-lucide="code"></i> Export HTML Report
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scheduled summaries list -->
+              <div class="panel mt-4">
+                <div class="panel-header">
+                  <div class="panel-title"><i data-lucide="clock" class="panel-icon"></i> Scheduled Reports & Distribution</div>
+                </div>
+                <div class="panel-body no-padding">
+                  <div class="scheduled-reports-list" id="compliance-scheduled-list">
+                    <!-- Loaded dynamically -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- 9. FULLSCREEN WALL MODE VIEW -->
+  <div id="view-wall" class="wall-mode-layout hidden">
+    <!-- Top HUD bar -->
+    <header class="wall-header">
+      <div class="wall-logo-container">
+        <i data-lucide="shield-alert" class="wall-logo-icon"></i>
+        <div class="wall-logo-text">
+          <h1>SENTINEL</h1>
+          <span>SOC COMMAND CORE</span>
+        </div>
+      </div>
+      <div class="wall-header-middle">
+        <div class="wall-mode-indicator">
+          <span class="live-pulse"></span>
+          <span>WALL MODE ACTIVE</span>
+        </div>
+        <div class="wall-notice">
+          Press <kbd>SPACE</kbd> to <span id="wall-play-state">pause rotation</span>
+        </div>
+      </div>
+      <div class="wall-header-right">
+        <div class="wall-clock" id="wall-live-clock">18:00:00</div>
+        <button class="btn-wall-exit" id="btn-exit-wall-mode">
+          <i data-lucide="log-out"></i>
+          <span>Exit Wall Mode</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation view tabs (Large tabs for HUD display) -->
+    <div class="wall-tabs">
+      <button class="wall-tab active" data-wall-tab="critical">
+        <i data-lucide="alert-triangle"></i>
+        <span>Critical Alerts</span>
+      </button>
+      <button class="wall-tab" data-wall-tab="volume">
+        <i data-lucide="activity"></i>
+        <span>Alert Volume</span>
+      </button>
+      <button class="wall-tab" data-wall-tab="mitre">
+        <i data-lucide="grid"></i>
+        <span>MITRE Coverage</span>
+      </button>
+      <button class="wall-tab" data-wall-tab="kpis">
+        <i data-lucide="trending-up"></i>
+        <span>KPI Summary</span>
+      </button>
+    </div>
+
+    <!-- Wall content frame -->
+    <main class="wall-viewport">
+      <!-- Tab A: Critical Alerts Grid -->
+      <div class="wall-view-slide active-slide" id="wall-slide-critical">
+        <div class="wall-slide-header">
+          <h2>Active Critical Threat Vectors</h2>
+          <span class="badge badge-critical">Immediate Intervention Required</span>
+        </div>
+        <div class="wall-cards-grid" id="wall-critical-cards">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Tab B: Live Volume metrics -->
+      <div class="wall-view-slide" id="wall-slide-volume">
+        <div class="wall-slide-header">
+          <h2>Continuous Alert Telemetry</h2>
+          <span class="badge badge-info">Live Stream Status: OK</span>
+        </div>
+        <div class="wall-chart-grid">
+          <div class="wall-panel flex-grow">
+            <div class="wall-panel-title">System Ingestion History (24 Hours)</div>
+            <div class="wall-chart-container">
+              <canvas id="chart-wall-telemetry"></canvas>
+            </div>
+          </div>
+          <div class="wall-panel wall-sidebar-stats">
+            <div class="wall-panel-title">Severity Statistics</div>
+            <div class="wall-metric-list" id="wall-severity-metrics">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab C: MITRE framework overview -->
+      <div class="wall-view-slide" id="wall-slide-mitre">
+        <div class="wall-slide-header">
+          <h2>Active Attack Coverage Heatmap</h2>
+          <span class="badge badge-warning">Adversary Tactics Analysis</span>
+        </div>
+        <div class="wall-mitre-outer-panel">
+          <div class="wall-panel height-full overflow-hidden">
+            <div class="wall-mitre-scroll-grid" id="wall-mitre-coverage-container">
+              <!-- Dynamically mapped mitre columns -->
+            </div>
+            
+            <div class="wall-mitre-footer-hud" id="wall-mitre-hud-stats">
+              <!-- Dynamically generated stats -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab D: Operational KPIs list -->
+      <div class="wall-view-slide" id="wall-slide-kpis">
+        <div class="wall-slide-header">
+          <h2>SOC Performance Operations SLA</h2>
+          <span class="badge badge-success">Target Status: Within SLA Bounds</span>
+        </div>
+        <div class="wall-kpi-grid">
+          <!-- KPI summary box cards -->
+          <div class="wall-kpi-box glow-success">
+            <div class="box-label">Mean Time to Detect (MTTD)</div>
+            <div class="box-val text-success">12.3 min</div>
+            <div class="box-target">SLA Target: 15.0 min</div>
+            <span class="box-badge text-success">WITHIN SLA</span>
+          </div>
+
+          <div class="wall-kpi-box glow-success">
+            <div class="box-label">Mean Time to Respond (MTTR)</div>
+            <div class="box-val text-success">45.7 min</div>
+            <div class="box-target">SLA Target: 60.0 min</div>
+            <span class="box-badge text-success">WITHIN SLA</span>
+          </div>
+
+          <div class="wall-kpi-box glow-success">
+            <div class="box-label">True Positive Resolution Rate</div>
+            <div class="box-val text-success">89.4%</div>
+            <div class="box-target">Target Target: > 85.0%</div>
+            <span class="box-badge text-success">WITHIN SLA</span>
+          </div>
+
+          <div class="wall-kpi-box glow-success">
+            <div class="box-label">Incident Containment Dwell Time</div>
+            <div class="box-val text-success">3.4 hours</div>
+            <div class="box-target">SLA Target: 4.0 hours</div>
+            <span class="box-badge text-success">WITHIN SLA</span>
+          </div>
+
+          <div class="wall-kpi-box">
+            <div class="box-label">Composite Posture Score</div>
+            <div class="box-val text-info">73 / 100</div>
+            <div class="box-target">Risk Level: Moderate</div>
+            <span class="box-badge text-info">STABLE</span>
+          </div>
+
+          <div class="wall-kpi-box">
+            <div class="box-label">Total Escalated Incidents</div>
+            <div class="box-val">23</div>
+            <div class="box-target">Active SOC Shift Queue</div>
+            <span class="box-badge text-muted">ACTIVE</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Report Generator Progress Overlay -->
+  <div class="modal-overlay hidden" id="modal-spinner-overlay">
+    <div class="modal-card spinner-card">
+      <div class="loading-spinner"></div>
+      <h3 id="modal-spinner-title">Generating Security Summary Report...</h3>
+      <p class="text-sm text-muted mt-1">Fetching threat details and drawing chart visuals.</p>
+    </div>
+  </div>
+
+  <!-- Simulate Threat Modal Overlay -->
+  <div class="modal-overlay hidden" id="modal-create-alert">
+    <div class="modal-card form-card">
+      <div class="modal-card-header">
+        <h3>Simulate Security Threat Alert</h3>
+        <button class="btn-icon" id="btn-close-create-modal" type="button"><i data-lucide="x"></i></button>
+      </div>
+      <form id="form-create-alert">
+        <div class="form-grid">
+          <div class="form-group col-span-2">
+            <label class="form-label" for="sim-title">Alert / Correlation Rule Title</label>
+            <input type="text" id="sim-title" required placeholder="e.g. Obfuscated PowerShell Command Executed">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="sim-severity">Severity Level</label>
+            <select class="form-select" id="sim-severity" required>
+              <option value="critical">Critical</option>
+              <option value="high" selected>High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+              <option value="info">Info</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="sim-system">Detection Engine</label>
+            <input type="text" id="sim-system" required placeholder="e.g. Sysmon Enterprise">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sim-asset">Target Asset Host</label>
+            <input type="text" id="sim-asset" required placeholder="e.g. WS-LEGAL-01">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sim-source">Source Address</label>
+            <input type="text" id="sim-source" required placeholder="e.g. 10.0.12.45">
+          </div>
+
+          <div class="form-group col-span-2">
+            <label class="form-label" for="sim-dest">Destination Address</label>
+            <input type="text" id="sim-dest" required placeholder="e.g. 185.220.101.5">
+          </div>
+
+          <div class="form-group col-span-2">
+            <label class="form-label checkbox-row">
+              <input type="checkbox" id="sim-ti">
+              <span class="ml-1 text-xs" style="margin-left: 6px;">Correlate with Threat Intel indicators (AlienVault OTX)</span>
+            </label>
+          </div>
+
+          <div class="form-group col-span-2">
+            <label class="form-label" for="sim-desc">Threat Description Details</label>
+            <textarea id="sim-desc" rows="3" required placeholder="Describe the trigger event logs context..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-card-footer mt-4" style="margin-top: 16px; display: flex; justify-content: flex-end; gap: 10px;">
+          <button type="submit" class="btn btn-primary">Simulate Alert</button>
+          <button type="button" class="btn btn-secondary" id="btn-cancel-create-modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lucide Icons initiation script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Application logic JS -->
+  <script src="app.js"></script>
+</body>
+</html>
